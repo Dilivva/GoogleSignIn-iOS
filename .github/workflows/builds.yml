@@ -22,3 +22,7 @@ jobs:
           -scheme GoogleSignIn-Package \
           -destination "generic/platform=iOS"
           -archivePath "archives/GoogleSignIn-Package"
+    - uses: actions/upload-artifact@v4
+      with:
+        name: GoogleSignIn-Package
+        path: archives/GoogleSignIn-Package      
