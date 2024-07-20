@@ -4,10 +4,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 8 * * *' # Cron uses UTC; run at nightly at midnight PST
 
 jobs:
   cron:
@@ -25,9 +21,4 @@ jobs:
           archive \
           -scheme GoogleSignIn-Package \
           -destination "generic/platform=iOS"
-    - name: Archive for macOS
-      run: |
-        xcodebuild \
-          archive \
-          -scheme GoogleSignIn-Package \
-          -destination "platform=OS X"
+          -archivePath "archives/GoogleSignIn-Package"
